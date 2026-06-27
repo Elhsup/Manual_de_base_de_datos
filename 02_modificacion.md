@@ -65,5 +65,5 @@ DELETE FROM Videojuego
 WHERE IdJuego = 101;
 
 [📚 Volver al Índice](README.md)
-[⬅️ Pagina anterior](01_introduccion)
+[⬅️ Pagina anterior](01_introduccion.md)
 [➡️ Siguiente pagina](03_diseno_avanzado.md)
