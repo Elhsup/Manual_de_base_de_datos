@@ -86,5 +86,7 @@ CREATE TABLE detalle_cotizacion (
     FOREIGN KEY (codigo_producto) REFERENCES productos(codigo_producto)
 );
 ```
-
 Y ya, bro. Eso es todo. ¡Unos saludiños brrrrrrrrrrrr! `xD`
+
+[📚 Volver al Índice](README.md)
+[⬅️ Pagina anterior](03_diseno_avanzado.md)
