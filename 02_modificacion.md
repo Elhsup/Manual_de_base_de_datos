@@ -63,7 +63,7 @@ WHERE IdJuego = 101;
 -- Delete de Videojuego
 DELETE FROM Videojuego 
 WHERE IdJuego = 101;
-```
+
 [📚 Volver al Índice](README.md)
 [⬅️ Pagina anterior](01_introduccion)
 [➡️ Siguiente pagina](03_diseno_avanzado.md)
