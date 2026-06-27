@@ -1,120 +1,130 @@
-GUÍA DE SQL: BASES DE DATOS DESDE CERO 🎮
-Aca vamos a explicar un poquiño de los que es el dml lo basiquiño para enteder que hace cada cosiña.
+# 🎮 GUÍA DE SQL: BASES DE DATOS DESDE CERO 🎮
 
-📊 Estructura Visual de la Data
-Plaintext
-Fila  ___________________
+Acá vamos a explicar un poquiño de lo que es el DML, lo basiquiño para entender qué hace cada cosiña. `^_^`
+
+## 📊 Estructura Visual de la Data
+
+```text
+Fila  ___________________ (Horizontal: Los datos completos de tus personajes)
        |
        |
-columna|
+Columna| (Vertical: La categoría o el tipo de dato)
        |
        | 
        |
-💡 por si no lo sabias toda esta informacion son tablas de excel gigantes pa k no te me confundais
+```
 
-🥚 BLOQUE 1: LO BÁSICO (Manipulación de Datos - DML)
-📥 1. El Comando INSERT INTO
+> 💡 **Por si no lo sabías:** Toda esta información son tablas de Excel gigantes pa' k no te me confundáis `O_o`.
+
+---
+
+## 🥚 BLOQUE 1: LO BÁSICO (Manipulación de Datos - DML)
+
+### 📥 1. El Comando `INSERT INTO`
 Es el comando encargado de crear filas nuevas (registros) dentro de una tabla. Es el que alimenta la base de datos con información real.
 
-(recordemos que las columnas son la forma en que se agrupa la info es decir sin columnas no sabemos a donde iria ese dato que vamos a ingresar en este caso la fila es lo que nos indica en donde iria ese dato ejemlo: una columna que se llame nombre, en la fila tiene que ir los nombres como juan pancho maduro goku etcetc)
+*(Recordemos que las columnas son la forma en que se agrupa la info; es decir, sin columnas no sabemos a dónde iría ese dato que vamos a ingresar. En este caso, la fila es lo que nos indica en dónde iría ese dato. Ejemplo: en una columna que se llame "nombre", en la fila tienen que ir los nombres como Juan, Pancho, Maduro, Goku, etc. etc.)*
 
-🏗️ La Estructura Obligatoria
-(porque tiene un orden sin un orden el programa no sabe lo que va a hacer) se divide en tres partes:
+#### 🏗️ La Estructura Obligatoria
+*(Porque tiene un orden; sin un orden, el programa no sabe lo que va a hacer `>_<`)*. Se divide en tres partes:
 
-SQL
+```sql
 INSERT INTO nombre_tabla (columna1, columna2, columna3) 
 VALUES (valor1, valor2, valor3);
-🧠 (La Lógica):
-📑 INSERT INTO nombre_tabla: Le dices a SQL: "¡Ey! Prepárate que voy a meter información en esta tabla específica". insert singinifica insertar o agregar, into es dentro, el nombre de la tabla indica si hay muchas tablas en donde va. osea inserta dentro de esta tabla colocate que se llama : tablaMario.
+```
 
-📋 Los campos entre paréntesis (columna1, columna2...): (hay tecnicamente van los nombres de la columna y si la tabla se llama mario entences los nombres de la columna serian (champiñon, monedas)): Aquí listas los nombres de las columnas que vas a llenar. Regla de examen: Van separados por comas y no llevan comillas.
+#### 🧠 La Lógica detrás del Código:
+* 📑 **`INSERT INTO nombre_tabla`**: Le dices a SQL: *"¡Ey! Prepárate que voy a meter información en esta tabla específica"*. `INSERT` significa insertar o agregar, `INTO` es dentro. El nombre de la tabla indica, si hay muchas tablas, en dónde va. O sea, "inserta dentro de esta tabla", colócate que se llama: `tablaMario`.
+* 📋 **Los campos entre paréntesis `(columna1, columna2...)`**: *(Ahí técnicamente van los nombres de la columna y si la tabla se llama Mario, entonces los nombres de la columna serían `(champiñon, monedas)`)*. Aquí listas los nombres de las columnas que vas a llenar. **Regla de examen:** Van separados por comas y NO llevan comillas.
+* 🪙 **`VALUES (valor1, valor2...)`**: *(Si es Mario sería: `'verde'`, `'rojas'`)*. Aquí metes los datos reales que se van a guardar. **Regla de oro:** Tienen que ir en el mismo orden exacto en el que escribiste las columnas arriba. Si la columna 1 es el champiñón, el valor 1 tiene que ser, en este caso, el color del champiñón. `VALUES` indica los valores exactos que coinciden con esas columnas. O sea, lo que va adentro p.
 
-🪙 VALUES (valor1, valor2...): (si es mario seria : verde, rojas): Aquí metes los datos reales que se van a guardar. Regla de oro: Tienen que ir en el mismo orden exacto en el que escribiste las columnas arriba. Si la columna 1 es la champiñon, el valor 1 tiene que ser en este caso el color del champiñon. VALUES Indica los valores exactos que coinciden con esas columnas. osea lo que va adentro p.
+#### 🛑 Reglas de Escritura de Datos
+*(Además, tenemos un grupo de reglas sobre cómo escribir los datos, y literalmente te sirven para que te corra el programa bien po k chi no no `T_T`)*
 
-🛑 Reglas de Escritura de Datos
-(ademas tenemos un grupo de reglas que estas son sobre como escribir los datos y literalmente te sirve para que te corra el programa bien po k chi no no)
+* 🔤 **Textos (`VARCHAR`) y Fechas (`DATE`)**: Obligatoriamente van encerrados en comillas simples (`' '`).
+* 🔢 **Números (`INT`, `DECIMAL`)**: Van sueltos, sin comillas.
 
-🔤 Textos (VARCHAR) y Fechas (DATE): Obligatoriamente van encerrados en comillas simples (' ').
-
-🔢 Números (INT, DECIMAL): Van sueltos, sin comillas.
-
-🔥 coloquemos un ejemplo random >:D
-
-SQL
+🔥 **Coloquemos un ejemplo random `>:D`**
+```sql
 INSERT INTO tablaMario (champiñon, monedas) VALUES ('verde', 'rojas');
-👁️ 2. El Comando SELECT * FROM
-Aca lo que vamos a hacer es ver todo lo que tenemos en la tabla al tu meter la informacion con el insert into lo guardaras pero no podras ver como esta la info etonces para poder ver si te equivocaste esta bien o mal colocaras selec * from.
+```
 
-🏗️ Estructura Estándar
-SQL
+---
+
+### 👁️ 2. El Comando `SELECT * FROM`
+Acá lo que vamos a hacer es ver todo lo que tenemos en la tabla. Al tú meter la información con el `INSERT INTO`, lo guardarás, pero no podrás ver cómo está la info. Entonces, para poder ver si te equivocaste, si está bien o mal, colocarás `SELECT * FROM`.
+
+#### 🏗️ Estructura Estándar
+```sql
 SELECT * FROM nombre_tabla;
-🧠 La Lógica:
-🔍 SELECT: Significa "Selecciona o búscame...".
+```
 
-⭐ * (El asterisco): Es un comodín que significa "TODAS las columnas".
+#### 🧠 La Lógica:
+* 🔍 **`SELECT`**: Significa "Selecciona o búscame...".
+* ⭐ **`*` (El asterisco)**: Es un comodín que significa "TODAS las columnas".
+* 🗺️ **`FROM nombre_tabla`**: Significa "desde esta tabla específica".
+* 🗣️ **Traducción**: *"Búscame todas las columnas desde la tabla Mario"*.
 
-🗺️ FROM nombre_tabla: Significa "desde esta tabla específica".
+🔥 **Ejemplo:** `SELECT * FROM tablaMario;`
 
-🗣️ Traducción: "Búscame todas las columnas desde la tabla Mario".
+#### 🎯 Forma B: Para ver columnas específicas (Filtrar columnas)
+Si el profesor te dice: *"Muestre solo cuántas monedas hay, no me interesa ver el color del champiñón"*, tú quitas el asterisco y escribes el nombre de la columna:
 
-🔥 ejemplo: SELECT * FROM tablaMario;
-
-🎯 Forma B: Para ver columnas específicas (Filtrar columnas)
-Si el profesor te dice: "Muestre solo cuántas monedas hay, no me interesa ver el color del champiñón", tú quitas el asterisco y escribes el nombre de la columna:
-
-SQL
+```sql
 SELECT monedas FROM tablaMario;
-aca lo que diria es muestrame(select) toda la columna osea recortamos un pedazo que se llama monedas de la tabla(from); tablaMario(nombre de la tabla)
+```
+Acá lo que diría es: muéstrame (`SELECT`) toda la columna, o sea, recortamos un pedazo que se llama "monedas" de la tabla (`FROM`); `tablaMario` (nombre de la tabla).
 
-🔄 3. El Comando UPDATEEEEEE
-¿Qué hace?: Es el comando que sirve para modificar o actualizar un dato que ya está guardado dentro de una fila. Por ejemplo, si registraste que el champiñón era 'verde' pero en realidad querías ponerle 'azul', usas UPDATE. osea cambias el valor a una fila.
+---
 
-🏗️ Estructura Fija de Tres Pasos
-(que se lee de arriba a abajo):
+### 🔄 3. El Comando UPDATEEEEEE `xD`
+**¿Qué hace?:** Es el comando que sirve para modificar o actualizar un dato que ya está guardado dentro de una fila. Por ejemplo, si registraste que el champiñón era `'verde'` pero en realidad querías ponerle `'azul'`, usas `UPDATE`. O sea, cambias el valor a una fila.
 
-SQL
+#### 🏗️ Estructura Fija de Tres Pasos (Se lee de arriba a abajo):
+```sql
 UPDATE nombre_tabla   
 SET columna_a_cambiar = 'nuevo_valor'          
 WHERE columna_filtro = 'valor_buscado';
-🎯 Descifrando los Valores
-donde dice "nuevo valor" y "valor buscado" significa los nombres que vas (o los datos como los quieras llamar) a cambiar y buscar:
+```
 
-🔵 nuevo valor: por ejemplo azul (osea el dato que vas a buscar).
+#### 🎯 Descifrando los Valores
+Donde dice `nuevo_valor` y `valor_buscado` significa los nombres (o los datos, como los quieras llamar) que vas a cambiar y buscar:
+* 🔵 **`nuevo_valor`**: Por ejemplo, `'azul'` (o sea, el dato fresco que vas a colocar).
+* 🔴 **`valor_buscado`**: Por ejemplo, `'rojo'` (el dato viejo que quieres cambiar). *(Ejemplo de las monedas)*.
 
-🔴 valor buscado: rojo (como el dato que quieres cambiar).
-(ejemplo de las monedas)
+#### 🧠 La Lógica de cada paso:
+* 🚪 **`UPDATE nombre_tabla`**: Le dices a SQL: *"UPDATE (cambia) y entra a esta tabla porque voy a hacer una edición"*.
+* ✍️ **`SET columna_a_cambiar = 'nuevo_valor'`**: La palabra `SET` significa "Establecer o Colocar". Aquí le dices: *"Quiero que metas este nuevo dato en esta columna"*.
+* 🎯 **`WHERE columna_filtro = 'valor_buscado'`**: **¡EL PASO MÁS IMPORTANTE!** Aquí le dices a qué fila exacta le vas a hacer el cambio. (`WHERE` significa "Donde": Pone una condición. SQL va a ir fila por fila y solo te va a pintar en la pantalla las filas que cumplan exactamente con lo que pides. Las demás las deja ocultas).
 
-🧠 La Lógica de cada paso:
-🚪 UPDATE nombre_tabla: Le dices a SQL: "update(cambia) y Entra a esta tabla porque voy a hacer una edición".
+#### 🚨 La Regla del Desastre:
+Si tú escribes en el examen `UPDATE tablaMario SET champiñon = 'azul';` y se te olvida poner el `WHERE`, SQL le va a cambiar el color a TODOS los champiñones de la tabla completa. El profesor te va a raspar de una vez por "destruir" la base de datos `x_x`. El `WHERE` es el francotirador que le dice a SQL: *"Cámbiame el dato ÚNICAMENTE en esta fila"*.
 
-✍️ SET columna_a_cambiar = 'nuevo_valor': La palabra SET significa "Establecer o Colocar". Aquí le dices: "Quiero que metas este nuevo dato en esta columna".
-
-🎯 WHERE columna_filtro = 'valor_buscado': ¡EL PASO MÁS IMPORTANTE! Aquí le dices a qué fila exacta le vas a hacer el cambio. (WHERE significa "Donde": Pone una condición. SQL va a ir fila por fila y solo te va a pintar en la pantalla las filas que cumplan exactamente con lo que pides. Las demás las deja ocultas).
-
-🚨 La Regla del Desastre:
-Si tú escribes en el examen UPDATE tablaMario SET champiñon = 'azul'; y se te olvida poner el WHERE, SQL le va a cambiar el color a TODOS los champiñones de la tabla completa. El profesor te va a raspar de una vez por "destruir" la base de datos. El WHERE es el francotirador que le dice a SQL: "Cámbiame el dato ÚNICAMENTE en esta fila".
-
-¿Que pasa con el where y colocarle el nombre de la tabla?
+**¿Qué pasa con el WHERE y colocarle el nombre de la tabla?**
 Sin ponerle un filtro, entra a la tabla y le cambia el valor a todas las filas que existan. Si tenías monedas rojas, verdes, doradas, negras... absolutamente todas pasan a ser azules. Borraste el historial del juego por error.
 
-osea que si le coloco el where sin el nombre de la tabla me puede cambiar en otros lugares que no quiero.
+* O sea, que si le coloco el `WHERE` sin la columna correcta, me puede cambiar en otros lugares que no quiero.
+* Si "no" le coloco el `WHERE`, me puede cambiar todo, hasta lo que no quiero que se cambie.
 
-si "no" le coloco el where me puede cambiar todo hasta lo que no quiero que se cambie.
+---
 
-❌ 4. El Comando DELETE
-¿Qué hace?: Sirve para borrar filas (registros) completas de una tabla. Ojo: borra la fila entera (el objeto), no una casilla suelta.
+### ❌ 4. El Comando DELETE
+**¿Qué hace?:** Sirve para borrar filas (registros) completas de una tabla. **Ojo:** borra la fila entera (el objeto), no una casilla suelta.
 
-🏗️ Estructura Obligatoria en la Pizarra:
-SQL
+#### 🏗️ Estructura Obligatoria en la Pizarra:
+```sql
 DELETE FROM nombre_tabla 
 WHERE nombre_columna = 'valor_buscado';
-🧠 La Lógica de examen:
-🧼 DELETE FROM tablaMario: Le dices a SQL: "Voy a eliminar registros de esta tabla". (Nota que aquí no se ponen nombres de columnas, porque vas a borrar la fila completa).
+```
 
-🛡️ WHERE monedas = 'azules': El guardaespaldas otra vez. Si no pones el WHERE, ejecutas un DELETE FROM tablaMario; y vías la tabla por completo, dejas a Mario sin ningún dato. El WHERE le dice: "Borra ÚNICAMENTE la fila donde las monedas sean azules".
+#### 🧠 La Lógica de examen:
+* 🧼 **`DELETE FROM tablaMario`**: Le dices a SQL: *"Voy a eliminar registros de esta tabla"*. (Nota que aquí no se ponen nombres de columnas, porque vas a borrar la fila completa).
+* 🛡️ **`WHERE monedas = 'azules'`**: El guardaespaldas otra vez. Si no pones el `WHERE`, ejecutas un `DELETE FROM tablaMario;` y vacías la tabla por completo, dejas a Mario sin ningún dato. El `WHERE` le dice: *"Borra ÚNICAMENTE la fila donde las monedas sean azules"*.
 
-🏆 Laboratorio Práctico de DML (Caso de Examen)
-SQL
+---
+
+### 🏆 Laboratorio Práctico de DML (Caso de Examen)
+```sql
 -- Insert into Consola 
 INSERT INTO Consola (IdConsola, Nombre, Marca) 
 VALUES (5, 'PS5', 'Sony');
@@ -132,63 +142,63 @@ WHERE IdJuego = 101;
 -- Delete de Videojuego
 DELETE FROM Videojuego 
 WHERE IdJuego = 101;
-🧠 BLOQUE 2: LO AVANZADO (Diseño, Llaves y Relaciones)
-🔑 Conceptos Clave: Claves y Relaciones
-🔑 °clave primaria: identificador unico de una tabla, que no puede repetirse ni ser nula.
+```
 
-🔗 °clave foranea: se lleva la clave primaria de una tabla, o otro dato. es la conexion de una tabla a otra (decimos ques esta es la segunda tabla tecnicamente tambien tiene su clave primaria).
+---
+---
 
-📐 Jerarquía Padre e Hijo
-La clave primaria puede salir en cualquier tabla (llamemoslo tabla padre), sin embargo la clave foranea se va a mover o eredar o aparecer en la tabla QUE NO ES principal (llamemoslo tabla hijo) ejemplo:
+## 🧠 BLOQUE 2: LO AVANZADO (Diseño, Llaves y Relaciones)
 
-en un hospital necesita el historial de el paciente
+### 🔑 Conceptos Clave: Claves y Relaciones
+* 🔑 **Clave Primaria (Primary Key):** Identificador único de una tabla, que no puede repetirse ni ser nula.
+* 🔗 **Clave Foránea (Foreign Key):** Se lleva la clave primaria de una tabla a otro lado. Es la conexión de una tabla a otra (decimos que esta es la segunda tabla; técnicamente también tiene su propia clave primaria).
 
-principal (padre): paciente (tiene su clave primaria)
+### 📐 Jerarquía Padre e Hijo
+La clave primaria puede salir en cualquier tabla (llamémosla **tabla padre**). Sin embargo, la clave foránea se va a mover, heredar o aparecer en la tabla QUE NO ES principal (llamémosla **tabla hijo**). `OwO`
 
-Derivada o no principal (hijo) es: ->historial<- ahi va a aparecer la clave foranea (que es la clave principal de paciente)
+**Ejemplo:** En un hospital se necesita el historial del paciente.
+* **Principal (Padre):** Paciente *(tiene su clave primaria)*.
+* **Derivada o no principal (Hijo):** Historial *(ahí va a aparecer la clave foránea, que es la clave principal del paciente)*.
 
-¿Donde van las claves foraneas?
-En este caso hay 3 razones por las que van en la parte de muchos o en la tabla hijo:
+#### ¿Dónde van las claves foráneas?
+En este caso, hay 3 razones por las que van en la parte de "muchos" o en la tabla hijo:
+1. El profesor dijo que donde iban "muchos", ahí van las foráneas `:b`.
+2. Primero sale el padre y después el hijo. La clave foránea, por lógica, no puede ir donde va el padre porque el padre salió primero que el hijo.
+3. Cuando tienes muchas cosas que se conectan con una sola, necesitas administrar quién es el dueño; de ahí agarras y le colocas las claves foráneas a las cosas que necesitas administrar.
 
-El profesor dijo que donde iban muchos ahi van las foraneas.
+**O así pa' que entiendas mejor:**
+* **Por regla de cardinalidad:** El lado de "Muchos" es el único que permite repetir el identificador del padre para conectar varios registros a un mismo origen.
+* **Por jerarquía de creación:** La tabla Padre es independiente y debe crearse primero; la tabla Hijo depende de la existencia del Padre para poder referenciarlo.
+* **Por integridad y propiedad:** La clave foránea actúa como el vínculo de pertenencia que define exactamente a qué registro de la tabla principal está asociado cada elemento derivado.
 
-Primero sale el padre y despues el hijo la clave foranea por logica no puede ir donde va el padre porque el padre salio primero que el hijo.
+### 🧬 Tipos de Relaciones
+Las relaciones son cómo se relaciona (`XD`) cada tabla. Hay 3 principales: *uno a uno*, *uno a muchos* (o muchos a uno, es lo mismo pero al revés) y *muchos a muchos* (gráficamente, el "uno" es una línea y el "muchos" es una pata de gallo).
 
-Cuando tienes muchas cosas que se conectan con una sola necesitas administrar quien es el dueño, de ahi agarras y le colocas las claves foraneas a las cosas que necesitas administrar.
+* 👆 **Uno a uno:** Es cuando un elemento de una tabla se puede conectar con un solo elemento de otra. **Ejemplo:** `Persona y huella dactilar`. En este caso solo existe una; acá obviamente la tabla padre sería "persona" y el hijo la "huella", y la clave foránea estaría en la del hijo (o sea, agarramos la clave primaria del padre).
+* 🥖 **Uno a muchos:** En este caso es cuando hay algo dentro de una tabla que se puede conectar con muchas cosas de otra tabla. **Ejemplo:** `Personas y Autos`. Una persona puede tener muchos autos, pero los autos no pueden tener muchos dueños. En este caso, la clave foránea iría en los autos ya que, como son muchos autos, necesitamos saber quiénes son los dueños.
+* 🦅 **Muchos a muchos:** Es cuando muchos elementos se conectan con otra tabla con también muchos elementos. **Ejemplo:** `Consolas y Videojuegos`. Hay muchos elementos en ambas tablas; no puede crearse una clave foránea en ninguna de las dos porque cada una es específica para guardar la información de consolas o de videojuegos. Además, ese no sería tanto el problema, sino que tendríamos que meter todos los datos manualmente porque son muchos elementos. Entonces, para resolver ese problema, creamos **otra tabla** (Tabla Puente/Intermedia) en donde juntemos las 2 claves foráneas y algo que pueda hacer una relación entre las 2 tablas. **Ejemplo:** `Lanzamiento` (con esta podrás, además de crear su propia clave primaria, guardar la información de ambas y sirve de intermediario porque, por medio de la fecha de lanzamiento, nos da una pista de qué consola y juego estamos guardando... o si no, haces una fusión de los nombres de las 2 tablas que queremos unir y ya `:b`).
 
-o haci pa que entiendas:
-Por regla de cardinalidad: El lado del "Muchos" es el único que permite repetir el identificador del padre para conectar varios registros a un mismo origen.
+---
 
-Por jerarquía de creación: La tabla Padre es independiente y debe crearse primero; la tabla Hijo depende de la existencia del Padre para poder referenciarlo.
-
-Por integridad y propiedad: La clave foránea actúa como el vínculo de pertenencia que define exactamente a qué registro de la tabla principal está asociado cada elemento derivado.
-
-🧬 Tipos de Relaciones
-Las relaciones es como se relacionan(XD) cada tabla hay 3 principales: uno a uno, uno a muchos, muchos a uno (es los mismo pero al reves) y muchos a muchos (graficamente el uno es una linea y el mucho es un para de gallo).
-
-👆 Uno a uno: Es cuando un elemento de una tabla se puede conectar con otro elemento por ejemplo: -->persona y huela dactilar<-- en este caso solo existe una aca obviamente la tabla padre seria persona y el hijo la huella y la clave foranea estaria en la del hijo osea agarramos la clave primaria del padre.
-
-🥖 Uno a muchos: en este caso es cuando hay algo dentro de una tabla que se puede conectar con muchas cosas de otra tabla ejemplo: -->Personas y Autos<-- una persona puede tener muchos autos pero los autos no pueden tener muchos dueños en este caso la clave foranea seria los autos ya que como son muchos autos necesitamos saber quienes son los dueños.
-
-🦅 Muchos a muchos: Es cuando muchos elementos se conectan con otra tabla con tambien muchos elementos por ejemplo -->consolas y videojuegos<-- hay muchos elementos en ambas tablas, no puede crearse una clave foranea en ninguna de las 2 porque cada una es especifica para guardar la informacion de consolas y videojuegos ademas de la clave foranea ese no seria tanto el problema sino que tendriamos que meter todos los datos manualmente porque son muchos elementos entonces para resolver ese problema podemos crear otra tabla en donde juntemos las 2 claves foraneas y algo que pueda hacer una relacion entre las 2 tablas: Lanzamiento (con esta podras ademas de crear su propia clave primaria guardar la informacion de ambas y sirve de intermediario porque pomedio de la fecha del lanzamiento darnos una pista de que consola y juego estamos guardando o sino haces una fusion de los 2 nombres de las 2 tablas que queremos unir y ya :b).
-
-💻 Código de Arquitectura de Base de Datos (DDL)
-SQL
--- Ejemplo de el tipo de caracteres con ejemplo:
+### 💻 Código de Arquitectura de Base de Datos (DDL)
+```sql
+-- Ejemplo del tipo de caracteres con ejemplo:
 CREATE DATABASE IF NOT EXISTS mi_base_de_datos 
 CHARACTER SET utf8mb4 
 COLLATE utf8mb4_unicode_ci;
-🛠️ Ejercicio de Práctica (Ejemplo Paciente con FK)
-SQL
+```
+
+### 🛠️ Ejercicio de Práctica (Ejemplo Paciente con FK)
+```sql
 CREATE TABLE Paciente (
-    id_paciente INT PRIMARY KEY AUTO_INCREMENT, -- Entero, Clave Primaria y se suma solo
+    id_paciente INT PRIMARY KEY AUTO_INCREMENT,  -- Entero, Clave Primaria y se suma solo
     cedula VARCHAR(20) NOT NULL UNIQUE,          -- Texto de hasta 20 letras, obligatorio y no se repite
     nombre VARCHAR(50) NOT NULL,                 -- Texto de hasta 50 letras, obligatorio
     apellido VARCHAR(50) NOT NULL,               -- Texto de hasta 50 letras, obligatorio
     fecha_nacimiento DATE,                       -- Solo la fecha
     estatura_metros DECIMAL(3,2),                -- Decimal (ej: 1.75)
     historial_clinico TEXT,                      -- Texto largo para observaciones
-    id_distrito INT,                            -- Entero para la Clave Foránea
+    id_distrito INT,                             -- Entero para la Clave Foránea
     
     -- Aquí creas la conexión con la tabla distrito
     FOREIGN KEY (id_distrito) REFERENCES Distrito(id_distrito)
@@ -196,9 +206,14 @@ CREATE TABLE Paciente (
 
 -- Cambiarle nombre a la tabla / columna: 
 -- ALTER TABLE nombre_tabla CHANGE nombre_antiguo nombre_nuevo TIPO_DE_DATO(longitud);
-🏢 Estructura de Producción: Sistema Maestro-Detalle (Requisiciones y Cotizaciones)
-1. Creación de las Tablas Maestras (Padres Independientes)
-SQL
+```
+
+---
+
+### 🏢 Estructura de Producción: Sistema Maestro-Detalle (Requisiciones y Cotizaciones)
+
+#### 1. Creación de las Tablas Maestras (Padres Independientes)
+```sql
 -- Tabla: Estatus
 CREATE TABLE estatus (
     id_estatus INT PRIMARY KEY AUTO_INCREMENT,
@@ -228,8 +243,10 @@ CREATE TABLE productos (
     stock_minimo_producto INT,
     precio_del_producto DECIMAL(10,2) NOT NULL
 );
-2. Creación de las Tablas de Documentos (Hijas con 1:N)
-SQL
+```
+
+#### 2. Creación de las Tablas de Documentos (Hijas con 1:N)
+```sql
 -- Tabla: Requisiciones (Cabecera)
 CREATE TABLE requisiciones (
     numero_de_la_requisicion INT PRIMARY KEY AUTO_INCREMENT,
@@ -251,8 +268,10 @@ CREATE TABLE cotizaciones (
     -- Conexiones físicas (FKs)
     FOREIGN KEY (rif_proveedor) REFERENCES proveedores(rif_proveedor)
 );
-3. Creación de las Tablas Detalle (Tablas Puente N:N)
-SQL
+```
+
+#### 3. Creación de las Tablas Detalle (Tablas Puente N:N)
+```sql
 -- Tabla Puente: Detalle de Requisición
 CREATE TABLE detalle_requisicion (
     numero_detalle_de_la_requisicion INT PRIMARY KEY AUTO_INCREMENT,
@@ -277,5 +296,6 @@ CREATE TABLE detalle_cotizacion (
     FOREIGN KEY (numero_de_la_cotizacion) REFERENCES cotizaciones(numero_de_la_cotizacion),
     FOREIGN KEY (codigo_producto) REFERENCES productos(codigo_producto)
 );
+```
 
-y ya bro eso es todo unos saludiños brrrrrrrrrrrr
+Y ya, bro. Eso es todo. ¡Unos saludiños brrrrrrrrrrrr! `xD`
