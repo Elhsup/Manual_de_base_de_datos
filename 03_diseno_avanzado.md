@@ -58,6 +58,9 @@ CREATE TABLE Paciente (
 -- Cambiarle nombre a la tabla / columna: 
 -- ALTER TABLE nombre_tabla CHANGE nombre_antiguo nombre_nuevo TIPO_DE_DATO(longitud);
 
+[📚 Volver al Índice](README.md)
+[⬅️ Pagina anterior](02_modificacion.md)
+[➡️ Siguiente pagina](04_sistema_maestro.md)
 
 
 
