@@ -75,4 +75,5 @@ SELECT monedas FROM tablaMario;
 ```
 Acá lo que diría es: muéstrame (`SELECT`) toda la columna, o sea, recortamos un pedazo que se llama "monedas" de la tabla (`FROM`); `tablaMario` (nombre de la tabla).
 
-[⬅️ Volver al Índice](Read.md)
+[📚 Volver al Índice](README.md)
+[➡️ Siguiente pagina](02_modificacion.md)
