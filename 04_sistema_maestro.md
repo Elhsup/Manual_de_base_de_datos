@@ -83,7 +83,7 @@ CREATE TABLE detalle_cotizacion (
     
     -- Unimos la Cotización con el Producto
     FOREIGN KEY (numero_de_la_cotizacion) REFERENCES cotizaciones(numero_de_la_cotizacion),
-    FOREIGN KEY (codigo_producto) REFERENCES productos(codigo_producto)
+    FOREIGN KEY (codigo_producto) REFERENCES productos(codigo_producto) 
 );
 ```
 Y ya, bro. Eso es todo. ¡Unos saludiños brrrrrrrrrrrr! `xD`
