@@ -10,7 +10,7 @@
 
 * **[🔄 Bloque 2: Modificación](02_modificacion.md)** Domina el arte de actualizar y borrar registros de forma segura (¡sin destruir tu base de datos! `UPDATE` , `DELETE` Y `WHERE`
 
-* **[🧠 Bloque 3: Diseño Avanzado](03_diseno_avanzado.md)** Entiende la lógica detrás de las Llaves Primarias, Foráneas y cómo conectar tus tablas. `LLAVER` , `RELACIONES` Y `TABLAS`
+* **[🧠 Bloque 3: Diseño Avanzado](03_diseno_avanzado.md)** Entiende la lógica detrás de las Llaves Primarias, Foráneas y cómo conectar tus tablas. `LLAVES` , `RELACIONES` Y `TABLAS`
 
 * **[🏢 Bloque 4: Sistema Maestro-Detalle](04_sistema_maestro.md)** Pon todo en práctica con un sistema real de Requisiciones y Cotizaciones. `EJERCICIOS RESUELTOS`
 
