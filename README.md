@@ -1,10 +1,19 @@
 # 📚 GUÍA MAESTRA DE SQL
 
-¡Hola personita de github! Selecciona el capítulo que quieras estudiar:
+¡Hola broder a tu manual interactivo! Esta guía está diseñada para llevarte desde cero hasta la gestión de sistemas complejos de bases de datos o hasta donde aprendas. 
 
-* [🥚 Bloque 1: Lo Básico (Insert y Select)](01_introduccion.md)
-* [🔄 Bloque 2: Modificación (Update y Delete)](02_modificacion.md)
-* [🧠 Bloque 3: Diseño Avanzado (Llaves y Relaciones)](03_diseno_avanzado.md)
-* [🏢 Bloque 4: Sistema Maestro-Detalle (Código Final)](04_sistema_maestro.md)
+---
 
-Espero lo disfrutes :)
+### 📖 Tabla de Contenidos
+
+* **[🥚 Bloque 1: Lo Básico](01_introduccion.md)** Aprende a alimentar tu base de datos y consultar información esencial con `INSERT` y `SELECT`.
+
+* **[🔄 Bloque 2: Modificación](02_modificacion.md)** Domina el arte de actualizar y borrar registros de forma segura (¡sin destruir tu base de datos!).
+
+* **[🧠 Bloque 3: Diseño Avanzado](03_diseno_avanzado.md)** Entiende la lógica detrás de las Llaves Primarias, Foráneas y cómo conectar tus tablas. 
+
+* **[🏢 Bloque 4: Sistema Maestro-Detalle](04_sistema_maestro.md)** Pon todo en práctica con un sistema real de Requisiciones y Cotizaciones.
+
+---
+
+> 💡 **Nota:** Si es tu primera vez, te recomiendo seguir el orden de los capítulos. ¡Espero que lo disfrutes! :)
