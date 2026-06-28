@@ -8,11 +8,11 @@
 
 * **[🥚 Bloque 1: Lo Básico](01_introduccion.md)** Aprende a alimentar tu base de datos y consultar información esencial con `INSERT` y `SELECT`.
 
-* **[🔄 Bloque 2: Modificación](02_modificacion.md)** Domina el arte de actualizar y borrar registros de forma segura (¡sin destruir tu base de datos!).
+* **[🔄 Bloque 2: Modificación](02_modificacion.md)** Domina el arte de actualizar y borrar registros de forma segura (¡sin destruir tu base de datos! `UPDATE` , `DELETE` Y `WHERE`
 
-* **[🧠 Bloque 3: Diseño Avanzado](03_diseno_avanzado.md)** Entiende la lógica detrás de las Llaves Primarias, Foráneas y cómo conectar tus tablas. 
+* **[🧠 Bloque 3: Diseño Avanzado](03_diseno_avanzado.md)** Entiende la lógica detrás de las Llaves Primarias, Foráneas y cómo conectar tus tablas. `LLAVER` , `RELACIONES` Y `TABLAS`
 
-* **[🏢 Bloque 4: Sistema Maestro-Detalle](04_sistema_maestro.md)** Pon todo en práctica con un sistema real de Requisiciones y Cotizaciones.
+* **[🏢 Bloque 4: Sistema Maestro-Detalle](04_sistema_maestro.md)** Pon todo en práctica con un sistema real de Requisiciones y Cotizaciones. `EJERCICIOS RESUELTOS`
 
 ---
 
